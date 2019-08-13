@@ -38,6 +38,10 @@ export default {
         content: pageDescription
       },
       {
+        name: 'author', 
+        content: 'Poe Bellentani'
+      },
+      {
         property: 'og:title',
         content: 'Test title',
         // following template options are identical
