@@ -9,12 +9,47 @@
 </template>
 
 <script>
+const pageDescription = 'Um site prova de conceito sobre acessibilidade para aplicações ricas em Javascript e um local de teste prático de Aria. O objetivo futuro é se tornar uma referência para desenvolvedores que desejem saber um pouco mais sobre acessibilidade.'
 export default {
   name: 'home',
   data () {
     return {
       title: 'Acessibilidade Sorocaba'
     }
+  },
+  metaInfo: {
+    title: 'Home',
+    // override the parent template and just use the above title only
+    titleTemplate: null,
+    link: [
+      {
+        rel: 'canonical', 
+        href: 'http://acesso.sorocaba.br'
+      }
+    ],
+    meta: [
+      { charset: 'utf-8' },
+      { 
+        name: 'viewport', 
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        name: 'description', 
+        content: pageDescription
+      },
+      {
+        property: 'og:title',
+        content: 'Test title',
+        // following template options are identical
+        // template: '%s - My page',
+        template: chunk => `${chunk} - Acesso Sorocaba`,
+        vmid: 'og:title'
+      },
+      {
+        property: 'og:description', 
+        content: pageDescription
+      }
+    ]
   }
 }
 </script>

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './routes/router';
 import VueAnalytics from 'vue-analytics';
+import VueMeta from 'vue-meta';
 
 Vue.config.productionTip = false
 
@@ -14,6 +15,11 @@ Vue.use(VueAnalytics , {
     enabled: !isProd,
     sendHitTask: isProd
   }
+})
+
+Vue.use(VueMeta, {
+  // optional pluginOptions
+  refreshOnceOnNavigation: true
 })
 
 new Vue({

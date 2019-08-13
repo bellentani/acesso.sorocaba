@@ -50,12 +50,47 @@
 	</div>
 </template>
 <script>
+	const pageDescription = 'Links para posts sobre acessibilidade. O objetivo futuro é se tornar uma referência para desenvolvedores que desejem saber um pouco mais sobre acessibilidade.'
 	export default{
 		name:'blog',
 		data (){
 			return{
 				title:'Blog'
 			}
+		},
+		metaInfo: {
+			title: 'Blog Acesso.Sorocaba',
+			// override the parent template and just use the above title only
+			titleTemplate: null,
+			link: [
+				{
+					rel: 'canonical', 
+					href: 'http://acesso.sorocaba.br/blog'
+				}
+			],
+			meta: [
+				{ charset: 'utf-8' },
+				{ 
+					name: 'viewport', 
+					content: 'width=device-width, initial-scale=1'
+				},
+				{
+					name: 'description', 
+					content: pageDescription
+				},
+				{
+					property: 'og:title',
+					content: 'Test title',
+					// following template options are identical
+					// template: '%s - My page',
+					template: chunk => `${chunk} - Acesso Sorocaba`,
+					vmid: 'og:title'
+				},
+				{
+					property: 'og:description', 
+					content: pageDescription
+				}
+			]
 		}
 	}
 </script>
